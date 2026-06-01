@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Source media (too large; store separately)
+active/
+
+# Generated output (regenerate via build_inos_sop.py)
+output/
+
+# External tools/installers
+INOS Needed Files/
+
+# Large template PDF
+template/SOP_TEMPLATE_WITH_PHOTOS.pdf
+
+# Local artifacts
+C*.txt

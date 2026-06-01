@@ -1,0 +1,141 @@
+==============================================================
+  SOP FACTORY — PROMPT TEMPLATE  (VRSI FORMAT)
+  Edit sections 3, 4, 4A, and 5 only. Do not touch 1 or 2.
+==============================================================
+
+TASK: Build a Standard Operating Procedure document in VRSI format.
+
+--------------------------------------------------------------
+[PRE-RUN] STEP 1 — Run prep_active.py before opening this prompt
+--------------------------------------------------------------
+
+  Script location: [this folder]\prep_active.py
+
+  Run it from a terminal in the template folder:
+    python "[this folder]\prep_active.py"
+
+  What it does automatically:
+    1. Finds all images in active\ (subfolders included)
+    2. Rotates phone photos using EXIF, removes near-white backgrounds
+    3. Extracts embedded images from any PDFs / .docx in active\
+    4. Numbers all images 01_name.png, 02_name.png... in order
+    5. Downloads web screenshots for any [WEB] entries in Section 4A
+    6. Writes active\image_manifest.txt describing each image
+
+  After it finishes:
+    - active\ will contain numbered images (01_*.png, 02_*.jpg...)
+    - active\image_manifest.txt will list each image and its caption
+    - Then come back here and use this PROMPT.txt with Claude
+
+  Optionally generate an image reference pack (not the SOP itself):
+    python "[this folder]\promptbuild.py"
+
+--------------------------------------------------------------
+[1] PATHS — Do not change this section
+--------------------------------------------------------------
+
+Locate the full path of this PROMPT.txt file.
+Derive all other paths from that location.
+
+  Template skeleton: [this folder]\SOP_TEMPLATE_WITH_PHOTOS.docx
+  Formatting rules:  [this folder]\SOP_TEMPLATE.md
+  Source files:      [this folder]\..\active\
+  Save output to:    [this folder]\..\output\
+
+--------------------------------------------------------------
+[2] READ ORDER — Do not change this section
+--------------------------------------------------------------
+
+Read ALL of these before writing a single word of the document:
+
+  1. [this folder]\SOP_TEMPLATE_WITH_PHOTOS.docx
+     Build from this skeleton. Match its structure, header,
+     footer, and revision history table exactly.
+
+  2. [this folder]\SOP_TEMPLATE.md
+     Follow every formatting rule in this file. It defines
+     section structure, bullet style, image insertion rules,
+     naming conventions, and all VRSI standards.
+
+  3. [this folder]\..\active\image_manifest.txt  (if present)
+     Read this before placing any images. It tells you exactly
+     what each numbered image shows. Use the descriptions as
+     captions in the document.
+
+  4. ALL files in [this folder]\..\active\
+     - Transcripts, notes, .md files → extract procedure steps
+     - Scripts (.ps1, .bat) → extract commands and parameters
+     - 01_*.png, 02_*.jpg... → insert inline at the step they show
+     - Match image to step by reading image_manifest.txt descriptions
+
+  IMAGE PLACEMENT RULE:
+     Insert each numbered image inline at the procedure step it
+     documents — not in a separate section. Use image_manifest.txt
+     descriptions as captions. If an image does not clearly match
+     any step, place it at the end of the nearest section.
+
+--------------------------------------------------------------
+[3] OUTPUT FILENAME — Edit before each run
+--------------------------------------------------------------
+
+  [this folder]\..\output\CHANGE-ME_v1.0.docx
+
+--------------------------------------------------------------
+[4] IMAGES — Edit before each run
+--------------------------------------------------------------
+
+After running prep_active.py, images are auto-numbered and ready.
+Only add notes here if you need to OVERRIDE the auto-order or
+manually map a specific image to a specific step.
+
+  (Leave blank if prep_active.py handled everything automatically.)
+
+--------------------------------------------------------------
+[4A] WEB IMAGE GAPS — Edit before each run
+--------------------------------------------------------------
+
+List any screenshots NOT present in active\ that should appear
+in the SOP. prep_active.py will search the web and save them
+as numbered images automatically.
+
+Format: one [WEB] line per image, plain English. Be specific.
+
+  (Add [WEB] lines here if needed — delete example lines below)
+
+--------------------------------------------------------------
+[5] VERBAL DESCRIPTION — Replace everything below this line
+--------------------------------------------------------------
+
+Document title:
+  [Enter the full SOP title here]
+
+Revision number and release date:
+  [e.g. v1.0 — January 1, 2026]
+
+Author initials:
+  [e.g. BK (Brian Kalsic)]
+
+What triggers this process:
+  [Describe the event or condition that causes a technician to
+   follow this procedure.]
+
+Steps (rough order):
+  - [Step 1]
+  - [Step 2]
+  - [Step 3]
+  (Add as many as needed — Claude will structure and format them.)
+
+System-specific notes (e.g., Ford Only):
+  - [Any steps or warnings that apply only to certain systems
+    or configurations. Leave blank if none.]
+
+Known gotchas:
+  - [Common mistakes, data-loss risks, or things that surprise
+    technicians the first time. Leave blank if none.]
+
+What success looks like:
+  - [Describe the end state that confirms the procedure worked.]
+
+Related documents or SPLs:
+  - [Links, document names, or references to supporting material.
+    Leave blank if none.]
