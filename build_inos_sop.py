@@ -2,7 +2,7 @@
 build_inos_sop.py
 =================
 Builds the VRSI-formatted "INOS Laptop Deployment AND Domain Join" SOP
-(INOS_DEPLOY-001 v1.2) using the SOPBuilder helper in sop_lib.py.
+(INOS_DEPLOY-001 v1.3) using the SOPBuilder helper in sop_lib.py.
 
 Source material:
   - Transcript: iNOS-Laptop-Deployment-Domain-Join-SOP transcript.md
@@ -24,10 +24,10 @@ from sop_lib import SOPBuilder
 
 b = SOPBuilder(
     template_docx=str(BASE / "template" / "SOP_TEMPLATE_WITH_PHOTOS.docx"),
-    output_docx=str(BASE / "output" / "INOS_DEPLOY-001_v1.2.docx"),
+    output_docx=str(BASE / "output" / "INOS_DEPLOY-001_v1.3.docx"),
     active_dir=str(BASE / "active"),
-    revision="1.2",
-    date="05/29/2026",
+    revision="1.3",
+    date="06/01/2026",
 )
 
 # ===========================================================================
@@ -564,6 +564,7 @@ b.revision_history([
     ("05/29/2026", "1.0", "Initial Release", "BK"),
     ("05/29/2026", "1.1", "Standardized product name to INOS throughout; replaced non-English (German/Turkish) Ventoy screenshots with English equivalents", "BK"),
     ("05/29/2026", "1.2", "Inlined BIOS-entry and one-time-boot-menu key steps into Phase 2; replaced the generic Duo screenshot with the real VRSI FortiGate SSL VPN Duo prompt; clarified that domain credentials cache after the first login, so the VPN is not needed for later sign-ins", "BK"),
+    ("06/01/2026", "1.3", "Builder script paths made portable (relative to script location); README and LICENSE added; repository published to GitHub (soakal/INOSDEPLOY, private)", "BK"),
 ])
 
 out = b.save()

@@ -1,11 +1,16 @@
 # INOS_DEPLOY-001 — SOP Build Log
 
-Record of how the **INOS Laptop Deployment AND Domain Join** SOP (`INOS_DEPLOY-001 v1.2`) was produced.
+Record of how the **INOS Laptop Deployment AND Domain Join** SOP (`INOS_DEPLOY-001 v1.3`) was produced.
 
-- **Output:** `output/INOS_DEPLOY-001_v1.2.docx`
+- **Output:** `output/INOS_DEPLOY-001_v1.3.docx`
 - **Builder script:** `build_inos_sop.py` (re-run any time to regenerate)
-- **Author:** BK · **Revision:** 1.2 · **Date:** 05/29/2026
+- **Author:** BK · **Revision:** 1.3 · **Date:** 06/01/2026
 - **Status:** Production-ready
+
+## v1.3 changes (06/01/2026)
+- **Portable builder paths** — `build_inos_sop.py` and `build_inos_sop_draft.py` now derive all paths relative to the script location (`Path(__file__).resolve().parent`) instead of hardcoded `C:\Users\briank\...` absolute paths. The SOP rebuilds correctly from any machine or directory.
+- **README and LICENSE added** — `README.md` documents prerequisites, quick-start, repo layout, and ISO backup strategy; `LICENSE` establishes proprietary all-rights-reserved terms.
+- **Repository published** — source code pushed to `https://github.com/soakal/INOSDEPLOY` (private). Large binaries (`active/`, `output/`, `INOS Needed Files/`) remain excluded via `.gitignore`.
 
 ## v1.2 changes (05/29/2026)
 - **BIOS / boot-menu entry inlined into Phase 2** — the procedure now tells the tech exactly how to get in (Dell: full shutdown → tap **F2** at the logo for **BIOS Setup** to confirm Secure Boot Off → **Save & Exit** → tap **F12** for the **One-Time Boot Menu**), with non-Dell key hints as sub-bullets. No Appendix lookup required. Appendix retained as supplementary reference.
