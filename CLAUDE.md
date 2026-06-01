@@ -37,6 +37,8 @@ b.bullet("• Top-level bullet")
 b.bullet("○ Sub-bullet", level=2)
 b.bullet_rich([("plain text "), ("Bold UI Name", True), (" more text")])
 b.image("01_screenshot.png", caption="Caption text", width_in=6.0)
+b.callout("WARNING", "Text for a red warning box")
+b.callout("INFO", "Text for a blue info box")   # also: IMPORTANT, TIP, NOTE
 b.scenario_table([("Label", "Value"), ...])
 b.revision_history([("2026-05-29", "1.0", "Initial release", "Author")])
 b.save("output/MY_SOP_v1.0.docx")
@@ -54,8 +56,9 @@ b.save("output/MY_SOP_v1.0.docx")
 ## Repo Layout
 
 ```
-active/          ← drop source files here (transcripts, screenshots, photos)
-output/          ← generated .docx files land here
+active/              ← drop source files here (transcripts, screenshots, photos)
+output/              ← generated .docx files land here
+INOS Needed Files/   ← large binaries (ISO, zip) — excluded from git
 template/
   sop_lib.py         ← SOPBuilder class (core builder API)
   prep_active.py     ← image pre-processor (run before building)
@@ -66,6 +69,8 @@ sop-builder-skill/
   SKILL.md           ← Claude skill definition
   example_builder.py ← reference builder script showing full API usage
   install.ps1        ← installs skill into Cowork
+build_inos_sop.py    ← INOS_DEPLOY-001 builder (current, v1.3)
+BUILD_LOG.md         ← full build history and change notes
 ```
 
 ## Python Dependencies

@@ -71,13 +71,16 @@ Write a Python script that imports `sop_lib.SOPBuilder`. Never hand-roll docx XM
 
 ```python
 import sys
-sys.path.insert(0, r"<SOP Factory root>\template")
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE / "template"))
 from sop_lib import SOPBuilder
 
 sop = SOPBuilder(
-    template_docx=r"<SOP Factory root>\template\SOP_TEMPLATE_WITH_PHOTOS.docx",
-    output_docx=r"<SOP Factory root>\output\<filename>.docx",
-    active_dir=r"<SOP Factory root>\active",
+    template_docx=str(BASE / "template" / "SOP_TEMPLATE_WITH_PHOTOS.docx"),
+    output_docx=str(BASE / "output" / "<filename>.docx"),
+    active_dir=str(BASE / "active"),
     revision="1.0",
     date="MM/DD/YYYY",
 )

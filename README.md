@@ -6,7 +6,7 @@ Generates professional VRSI-formatted Standard Operating Procedure documents (`.
 
 | Document | Version | Description |
 |---|---|---|
-| `INOS_DEPLOY-001` | v1.2 | INOS Laptop Deployment & Domain Join |
+| `INOS_DEPLOY-001` | v1.3 | INOS Laptop Deployment & Domain Join |
 
 ## Prerequisites
 
